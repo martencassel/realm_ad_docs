@@ -135,5 +135,25 @@ sudo cat /etc/foreman-proxy/settings.d/realm_ad.yml
 # Optional:  use the fqdn of the host to generate the computername
 #:computername_use_fqdn: false
 
+sudo adcli info -D lab.local
+[domain]
+domain-name = lab.local
+domain-short = LAB
+domain-forest = lab.local
+domain-controller = ad01.lab.local
+domain-controller-site = Default-First-Site-Name
+domain-controller-flags = pdc gc ldap ds kdc timeserv closest writable good-timeserv full-secret ads-web
+domain-controller-usable = yes
+domain-controllers = ad01.lab.local
+[computer]
+computer-site = Default-First-Site-Name
+
+# Join the domain
+sudo adcli join
+Password for Administrator@LAB.LOCAL:
+
+# Default keytab
+sudo find / -name *.keytab
+/etc/krb5.keytab
 
 ```
