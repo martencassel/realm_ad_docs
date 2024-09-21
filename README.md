@@ -21,6 +21,26 @@ sudo dnf install -y foreman-installer
 
 sudo dnf -y install rubygem-radcli rubygem-smart_proxy_realm_ad_plugin
 
+sudo cat /etc/hosts
+127.0.0.1   rhel9.lab.local localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+hostnamectl
+
+ Static hostname: rhel9.lab.local
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 84e7e1e87985423e8d863c35f0d301fa
+         Boot ID: f28fd47d6b7e4c7ab2aa3c617790141b
+  Virtualization: vmware
+Operating System: Red Hat Enterprise Linux 9.4 (Plow)
+     CPE OS Name: cpe:/o:redhat:enterprise_linux:9::baseos
+          Kernel: Linux 5.14.0-427.35.1.el9_4.x86_64
+    Architecture: x86-64
+ Hardware Vendor: VMware, Inc.
+  Hardware Model: VMware Virtual Platform
+Firmware Version: 6.00
+
 sudo foreman-installer \
  --no-enable-foreman \
  --no-enable-foreman-plugin-puppet \
